@@ -1,0 +1,108 @@
+@use 'styles' as *;
+
+.Product {
+  padding: 1.5rem;
+
+  .Brand {
+    color: $orange;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ProductName {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .Desc {
+    font-size: 1rem;
+    color: $dark-grayish-blue;
+    margin-bottom: 1.25rem;
+  }
+
+  .Prices {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+
+    .Discount {
+      display: flex;
+      align-items: center;
+
+      .Price {
+        margin-right: 1rem;
+      }
+
+      .Percentage {
+        color: $orange;
+        font-weight: 700;
+        background: $pale-orange;
+        padding: 2px 8px;
+        border-radius: 8px;
+      }
+    }
+
+    .Original {
+      font-size: 0.75rem;
+      color: $grayish-blue;
+      text-decoration: line-through;
+    }
+  }
+
+  .Quantity {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+    background: $pale-orange;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+
+    .Control {
+      color: $orange;
+      font-size: 1.75rem;
+      cursor: pointer;
+    }
+  }
+
+  .Add2Cart {
+    width: 100%;
+    height: 48px;
+    color: $white;
+    background: $orange;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 35px -5px $orange;
+    margin-bottom: 2rem;
+    transition: filter 200ms linear, transform 100ms ease;
+
+    &:hover,
+    &:active {
+      filter: opacity(80%);
+    }
+
+    &:active {
+      transform: translateY(5px);
+    }
+
+    .CartIcon {
+      width: 18px;
+      height: 18px;
+      margin-right: 12px;
+    }
+
+    .ButtonText {
+      font-weight: 700;
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+  }
+}
