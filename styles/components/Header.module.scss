@@ -1,0 +1,90 @@
+@use 'styles' as *;
+
+.Header {
+  @include container;
+  height: 64px;
+  display: flex;
+  padding: 0 1rem;
+  background: $white;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid $light-grayish-blue;
+
+  @include medium {
+    height: 112px;
+  }
+
+  .Left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .Menu {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.75rem;
+
+      @include small {
+        display: none;
+      }
+
+      .MenuIcon {
+        color: $dark-grayish-blue;
+      }
+    }
+
+    .Logo {
+      height: 50px;
+      letter-spacing: -2px;
+      cursor: pointer;
+    }
+  }
+
+  .Right {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    .Cart {
+      width: 24px;
+      margin-right: 0.75rem;
+      cursor: pointer;
+
+      @include medium {
+        margin-right: 2rem;
+      }
+
+      .CartIcon {
+        color: $dark-grayish-blue;
+
+        &:hover,
+        &:active {
+          color: $black;
+        }
+      }
+    }
+
+    .Profile {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      transition: all 500ms ease;
+      border: 3px solid transparent;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        border-color: $orange;
+      }
+
+      @include medium {
+        width: 40px;
+        height: 40px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

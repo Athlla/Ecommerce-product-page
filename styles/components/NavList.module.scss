@@ -1,0 +1,35 @@
+@use 'styles' as *;
+
+.Nav {
+  display: none;
+  margin-left: 3rem;
+  height: 100%;
+
+  @include medium {
+    display: flex;
+  }
+
+  .NavList {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 100%;
+
+    .NavItem {
+      list-style: none;
+      cursor: pointer;
+      color: $dark-grayish-blue;
+      border-bottom: 3px solid transparent;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      transition: all 500ms ease;
+
+      &:hover,
+      &:active {
+        color: $black;
+        border-color: $orange;
+      }
+    }
+  }
+}

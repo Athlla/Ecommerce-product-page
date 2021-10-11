@@ -1,5 +1,12 @@
+import Navbar from 'components/Header';
+
 const Home = () => {
-  return <p>Hello World!</p>;
+  return (
+    <>
+      <Navbar />
+      <main></main>
+    </>
+  );
 };
 
 export default Home;
