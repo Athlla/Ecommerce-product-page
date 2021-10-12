@@ -2,6 +2,15 @@
 
 .Product {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
+  @include medium {
+    padding: 3rem;
+    width: 50%;
+  }
 
   .Brand {
     color: $orange;
@@ -13,12 +22,27 @@
   .ProductName {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
+
+    @include large {
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      font-size: 2.5rem;
+    }
+
+    @include xlarge {
+      font-size: 3rem;
+    }
   }
 
   .Desc {
     font-size: 1rem;
     color: $dark-grayish-blue;
     margin-bottom: 1.25rem;
+    line-height: 1.75;
+
+    @include large {
+      margin-bottom: 2rem;
+    }
   }
 
   .Prices {
@@ -26,6 +50,16 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1.25rem;
+
+    @include medium {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    @include large {
+      margin-bottom: 2rem;
+    }
 
     .Discount {
       display: flex;
@@ -51,58 +85,77 @@
     }
   }
 
-  .Quantity {
-    width: 100%;
-    height: 48px;
+  .QuantitynButton {
     display: flex;
-    font-weight: 700;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.25rem;
-    background: $pale-orange;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    flex-direction: column;
 
-    .Control {
-      color: $orange;
-      font-size: 1.75rem;
-      cursor: pointer;
-    }
-  }
-
-  .Add2Cart {
-    width: 100%;
-    height: 48px;
-    color: $white;
-    background: $orange;
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 10px 35px -5px $orange;
-    margin-bottom: 2rem;
-    transition: filter 200ms linear, transform 100ms ease;
-
-    &:hover,
-    &:active {
-      filter: opacity(80%);
+    @include medium {
+      flex-direction: row;
+      gap: 1rem;
     }
 
-    &:active {
-      transform: translateY(5px);
-    }
-
-    .CartIcon {
-      width: 18px;
-      height: 18px;
-      margin-right: 12px;
-    }
-
-    .ButtonText {
+    .Quantity {
+      width: 100%;
+      height: 48px;
+      display: flex;
       font-weight: 700;
-      font-family: 'Kumbh Sans', sans-serif;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.25rem;
+      background: $light-grayish-blue;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      user-select: none;
+
+      @include medium {
+        flex: 1;
+      }
+
+      .Control {
+        color: $orange;
+        font-size: 1.75rem;
+        cursor: pointer;
+      }
+    }
+
+    .Add2Cart {
+      width: 100%;
+      height: 48px;
+      color: $white;
+      background: $orange;
+      border: none;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 10px 35px -5px $orange;
+      margin-bottom: 2rem;
+      transition: filter 200ms linear, transform 100ms ease;
+
+      @include medium {
+        flex: 2;
+      }
+
+      &:hover,
+      &:active {
+        filter: opacity(80%);
+      }
+
+      &:active {
+        transform: translateY(5px);
+      }
+
+      .CartIcon {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+      }
+
+      .ButtonText {
+        font-weight: 700;
+        font-family: 'Kumbh Sans', sans-serif;
+      }
     }
   }
 }
