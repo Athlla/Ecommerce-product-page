@@ -28,9 +28,6 @@ $xlarge: 1280px;
   width: 100%;
   margin: auto;
 
-  @include small {
-    max-width: $small;
-  }
   @include medium {
     max-width: $medium;
   }

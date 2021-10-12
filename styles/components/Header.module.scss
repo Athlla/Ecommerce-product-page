@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid $light-grayish-blue;
+  user-select: none;
 
   @include medium {
     padding: 0;
@@ -24,6 +25,8 @@
       width: 24px;
       height: 24px;
       margin-right: 0.75rem;
+      cursor: pointer;
+      z-index: 11;
 
       @include medium {
         display: none;
@@ -31,6 +34,13 @@
 
       .MenuIcon {
         color: $dark-grayish-blue;
+
+        &:hover {
+          path {
+            // d: path('M6 18L18 6M6 6l12 12');
+            stroke-dasharray: 0;
+          }
+        }
       }
     }
 
@@ -38,6 +48,16 @@
       height: 50px;
       letter-spacing: -2px;
       cursor: pointer;
+    }
+
+    .Nav {
+      display: none;
+
+      @include medium {
+        display: block;
+        height: 100%;
+        margin-left: 3rem;
+      }
     }
   }
 
@@ -53,6 +73,7 @@
 
       @include medium {
         margin-right: 2rem;
+        position: relative;
       }
 
       .CartIcon {

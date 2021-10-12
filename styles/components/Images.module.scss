@@ -4,6 +4,10 @@
   width: 100%;
   height: 300px;
 
+  @include small {
+    height: 400px;
+  }
+
   @include medium {
     padding: 2rem;
     height: 100%;

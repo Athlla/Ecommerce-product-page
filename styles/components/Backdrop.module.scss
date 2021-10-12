@@ -1,0 +1,19 @@
+@use 'styles' as *;
+
+.Backdrop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba($color: $black, $alpha: 0.5);
+  z-index: 5;
+  opacity: 0;
+  transition: all 300ms ease;
+  visibility: hidden;
+}
+
+.Show {
+  opacity: 1;
+  visibility: visible;
+}

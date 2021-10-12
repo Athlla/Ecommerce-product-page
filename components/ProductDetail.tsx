@@ -1,6 +1,38 @@
+import { useState } from 'react';
 import styles from 'styles/components/ProductDetail.module.scss';
 
-const ProductDetail = () => {
+export type product = {
+  name: string;
+  price: number;
+  quantity: number;
+};
+
+interface Props {
+  addtoCart: (product: product) => void;
+}
+
+const ProductDetail = ({ addtoCart }: Props) => {
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const addQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const subtractQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity - 1);
+  };
+
+  const product = {
+    name: 'Fall Limited Edition Sneakers',
+    price: 125,
+    quantity: quantity,
+  };
+
+  const add2CartHandler = () => {
+    addtoCart(product);
+    setQuantity(1);
+  };
+
   return (
     <div className={styles.Product}>
       <div className={styles.Brand}>SNEAKER COMPANY</div>
@@ -21,11 +53,15 @@ const ProductDetail = () => {
       </div>
       <div className={styles.QuantitynButton}>
         <div className={styles.Quantity}>
-          <span className={styles.Control}>-</span>
-          <span>0</span>
-          <span className={styles.Control}>+</span>
+          <span className={styles.Control} onClick={subtractQuantity}>
+            -
+          </span>
+          <span>{quantity}</span>
+          <span className={styles.Control} onClick={addQuantity}>
+            +
+          </span>
         </div>
-        <button className={styles.Add2Cart}>
+        <button className={styles.Add2Cart} onClick={add2CartHandler}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className={styles.CartIcon}

@@ -1,0 +1,93 @@
+@use 'styles' as *;
+
+.Cart {
+  position: absolute;
+  width: 90vw;
+  top: 73px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: $white;
+  border-radius: 8px;
+  z-index: 5;
+  cursor: default;
+  box-shadow: 0 10px 30px -10px $dark-grayish-blue;
+  transform: translateY(-200%);
+  transition: all 500ms ease-in-out;
+
+  @include medium {
+    width: 400px;
+    top: 50px;
+    right: -50px;
+    left: auto;
+  }
+
+  @include large {
+    right: -70px;
+  }
+
+  .Text {
+    padding: 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid $light-grayish-blue;
+  }
+
+  .CartContents {
+    padding: 1rem;
+
+    .CartItems {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .Image {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .Details {
+        flex: 1;
+      }
+
+      .Action {
+        cursor: pointer;
+      }
+    }
+
+    .CheckoutButton {
+      width: 100%;
+      border: none;
+      background: $orange;
+      color: $white;
+      height: 48px;
+      border-radius: 8px;
+      font-family: 'Kumbh Sans', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 250ms ease-in-out, transform 100ms ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        transform: translateY(3px);
+      }
+    }
+
+    .Empty {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      color: $dark-grayish-blue;
+      justify-content: center;
+    }
+  }
+}
+
+.Show {
+  transform: translateY(0);
+}
