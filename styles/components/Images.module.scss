@@ -3,6 +3,7 @@
 .Images {
   width: 100%;
   height: 300px;
+  position: relative;
 
   @include small {
     height: 400px;
@@ -16,17 +17,65 @@
     flex-direction: column;
   }
 
+  .ImagesControl {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+    transition: color 300ms ease-in-out;
+
+    &:hover {
+      color: $orange;
+    }
+
+    &:first-of-type {
+      left: 5px;
+    }
+
+    &:last-of-type {
+      right: 5px;
+    }
+
+    @include medium {
+      display: none;
+    }
+  }
+
   .Main {
-    position: relative;
+    width: 100%;
     height: 100%;
-    flex: 1;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @include medium {
       height: 384px;
+      flex: 1;
+      cursor: zoom-in;
+    }
 
-      img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      scroll-snap-align: center;
+
+      @include medium {
+        width: 100%;
         height: 100%;
         border-radius: 15px;
+        flex: none;
       }
     }
   }
@@ -39,5 +88,18 @@
       display: flex;
       gap: 32px;
     }
+  }
+}
+
+.LightBox {
+  width: 100%;
+
+  .Thumbnails {
+    display: flex;
+    justify-content: center;
+  }
+  .ImagesControl {
+    display: block;
+    transform: translateY(-75px);
   }
 }
